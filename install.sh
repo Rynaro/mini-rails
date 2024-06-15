@@ -25,10 +25,11 @@ install_packages() {
 # Function to consolidate post-installation scripts
 post_install() {
   echo "Running post-install scripts..."
-  sudo systemctl enable postgresql
-  sudo systemctl start postgresql
-  sudo systemctl enable redis-server
-  sudo systemctl start redis-server
+
+  sudo /etc/init.d/postgresql start
+  sudo /etc/init.d/redis-server start
+
+  echo "Post-installation steps completed."
 }
 
 # Source utilities script
