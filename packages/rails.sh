@@ -10,7 +10,7 @@ install_package() {
     gem install bundler
     gem install rails
     rbenv rehash
-  else;
+  else
     echo 'Any Ruby version should be installed prior having Rails being installed'
   fi
 }

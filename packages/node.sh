@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Source utilities script
-source "$(dirname "$0")/../utilities.sh"
+safe_source "$(dirname "$0")/../utilities.sh"
 
 # Function to install the latest Node.js version
 install_latest_node() {
@@ -9,9 +9,8 @@ install_latest_node() {
     echo "Node already installed!"
   else
     echo "Installing the latest Node.js version..."
-    nvm install node
-    nvm use node
-  end
+    nvm install v18
+  fi
 }
 
 install_package

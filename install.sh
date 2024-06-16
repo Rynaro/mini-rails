@@ -1,5 +1,12 @@
 #!/bin/bash
 
+PLUGIN_NAME='mini-rails'
+PLUGIN_VERSION='1.0.0'
+PLUGIN_RELATIVE_FOLDER="$(dirname "$0")/$1"
+
+# Source utilities script
+source "$PLUGIN_RELATIVE_FOLDER/utilities.sh"
+
 # Function to prepare to install packages
 prepare() {
   if is_debian_bookworm; then
@@ -31,9 +38,6 @@ post_install() {
 
   echo "Post-installation steps completed."
 }
-
-# Source utilities script
-safe_source "$(dirname "$0")/utilities.sh"
 
 # Run pipeline
 prepare
