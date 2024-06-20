@@ -9,10 +9,10 @@ source "$PLUGIN_RELATIVE_FOLDER/utilities.sh"
 
 # Function to prepare to install packages
 prepare() {
-  if is_debian_bookworm; then
+  if is_debian_bookworm || is_termux; then
     update_repositories
   else
-    echo "This script is designed for Debian Bookworm."
+    echo "This script is designed for Termux and Debian Bookworm as PRoot Distro."
     exit 1
   fi
 }
