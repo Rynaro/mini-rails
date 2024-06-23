@@ -5,6 +5,11 @@ prepare_package() {
 }
 
 install_package() {
+  if is_termux; then
+    echo "Rails will be installed inside the proot-distro for better lib support!"
+    return
+  fi
+
   if command_exists ruby; then
     echo "Installing Bundler and Rails gems..."
     gem install bundler
