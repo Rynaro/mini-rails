@@ -22,8 +22,10 @@ configure_package() {
 
   pg_ctl -D $PREFIX/var/lib/postgresql start
 
-  prompt_postgres_credentials
+  createuser --superuser postgres
+  psql -U postgres -c " CREATE DATABASE postgres WITH OWNER postgres;"
 
+  prompt_postgres_credentials
   # Switch to the postgres superuser to create a new user and set the password
   createuser -U postgres $PG_USER
   psql -U postgres -c "ALTER USER $PG_USER WITH PASSWORD '$PG_PASSWORD';"
