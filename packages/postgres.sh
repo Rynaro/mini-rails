@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Source utilities script
-source "$(dirname "$0")/../utilities.sh"
+safe_source "utilities.sh"
 
 # Function to install NVM
 install_package() {

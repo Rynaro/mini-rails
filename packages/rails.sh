@@ -1,7 +1,12 @@
 #!/bin/bash
 
+# Source utilities script
+safe_source "utilities.sh"
+
 prepare_package() {
-  sudo apt install -y libpq-dev
+  if is_linux && is_debian_bookwork; then
+    sudo apt install -y libpq-dev
+  fi
 }
 
 install_package() {

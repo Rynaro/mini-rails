@@ -3,7 +3,7 @@
 NODE_LTS=v20.15
 
 # Source utilities script
-safe_source "$(dirname "$0")/../utilities.sh"
+safe_source "utilities.sh"
 
 # Function to install the latest Node.js version
 install_latest_node() {

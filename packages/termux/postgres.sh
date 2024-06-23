@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Source utilities script
+safe_source "utilities.sh"
+
 # Function to prompt user for PostgreSQL credentials
 prompt_postgres_credentials() {
   read -p "Enter PostgreSQL user (default: user): " input_pg_user
@@ -33,3 +36,4 @@ configure_package() {
 
 install_package
 configure_package
+

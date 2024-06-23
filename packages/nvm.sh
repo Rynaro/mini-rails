@@ -3,7 +3,8 @@
 NVM_VERSION=0.39.7
 
 # Source utilities script
-source "$(dirname "$0")/../utilities.sh"
+safe_source "utilities.sh"
+
 
 # Function to install NVM
 install_package() {

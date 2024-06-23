@@ -32,8 +32,9 @@ install_packages() {
 post_install() {
   echo "Running post-install scripts..."
 
-  sudo /etc/init.d/postgresql start
-  sudo /etc/init.d/redis-server start
+  if is_termux; then
+    /etc/init.d/postgresql start
+  fi
 
   echo "Post-installation steps completed."
 }

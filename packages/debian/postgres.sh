@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Source utilities script
-safe_source "$(dirname "$0")/../utilities.sh"
+safe_source "utilities.sh"
 
 # Default PostgreSQL user credentials
 PG_USER=${PG_USER:-defaultuser}
