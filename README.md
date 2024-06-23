@@ -1,3 +1,5 @@
+<img src="https://github.com/Rynaro/mini-rails/assets/5271543/9a2350e1-1ffd-4f6f-8978-450b57bc67b0" height="150" />
+
 # Mini Rails
 
 **Full Rails Environment Plugin for Debian Proot**
