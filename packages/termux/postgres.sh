@@ -12,7 +12,6 @@ prompt_postgres_credentials() {
   PG_PASSWORD=${input_pg_password:-pswd}
 }
 
-
 install_package() {
   pkg install postgresql
 }
@@ -24,8 +23,10 @@ configure_package() {
   pg_ctl -D $PREFIX/var/lib/postgresql start
 
   prompt_postgres_credentials
-  createuser $PG_USER
-  psql -c "ALTER USER $USER WITH PASSWORD '$PG_PASSWORD';"
+
+  # Switch to the postgres superuser to create a new user and set the password
+  createuser -U postgres $PG_USER
+  psql -U postgres -c "ALTER USER $PG_USER WITH PASSWORD '$PG_PASSWORD';"
 
   pg_ctl -D $PREFIX/var/lib/postgresql stop
 
