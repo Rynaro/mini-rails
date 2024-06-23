@@ -5,7 +5,7 @@ prepare_package() {
 }
 
 install_package() {
-  if command_exists ruby; then 
+  if command_exists ruby; then
     echo "Installing Bundler and Rails gems..."
     gem install bundler
     gem install rails
@@ -17,3 +17,4 @@ install_package() {
 
 prepare_package
 install_package
+

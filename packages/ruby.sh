@@ -5,6 +5,11 @@ source "$(dirname "$0")/../utilities.sh"
 
 # Function to install rbenv
 install_package() {
+  if is_termux; then
+    echo "Ruby will be installed inside the proot-distro for better lib support!"
+    return
+  fi
+
   if command_exists rbenv; then
     latest_ruby_version=$(rbenv install -l | grep -v - | tail -1)
     echo "Installing Ruby $latest_ruby_version..."
@@ -16,3 +21,4 @@ install_package() {
 }
 
 install_package
+

@@ -5,6 +5,11 @@ source "$(dirname "$0")/../utilities.sh"
 
 # Function to install rbenv
 install_package() {
+  if is_termux; then
+    echo "rbenv will be installed inside the proot-distro for better lib support!"
+    return
+  fi
+
   if command_exists rbenv; then
     echo "rbenv is already installed."
   else
