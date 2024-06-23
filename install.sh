@@ -21,7 +21,6 @@ prepare() {
 install_packages() {
   echo "Installing Plugin: mini-rails..."
   safe_source "packages/postgres.sh"
-  safe_source "packages/redis.sh"
   safe_source "packages/rbenv.sh"
   safe_source "packages/ruby.sh"
   safe_source "packages/rails.sh"
