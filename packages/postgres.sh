@@ -11,7 +11,9 @@ install_package() {
     if is_termux; then
       safe_source "packages/termux/postgres.sh"
     elif is_linux && is_debian_bookworm; then
-      safe_source "packages/debian/postgres.sh"
+      echo "Postgres is installed using Termux Packages to get a properly patched revision for Android Devices!"
+      echo "Check this file source to find the experimental source attempt to get this done inside the Proot Distro!"
+      # safe_source "packages/debian/postgres.sh"
     fi
   fi
 }

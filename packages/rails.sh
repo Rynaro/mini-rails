@@ -4,9 +4,11 @@
 safe_source "utilities.sh"
 
 prepare_package() {
-  if is_linux && is_debian_bookworm; then
-    sudo apt install -y libpq-dev
+  if is_termux; then
+    return
   fi
+
+  sudo apt install -y libpq-dev
 }
 
 install_package() {
