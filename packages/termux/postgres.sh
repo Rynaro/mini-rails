@@ -27,7 +27,7 @@ configure_package() {
 
   prompt_postgres_credentials
   # Switch to the postgres superuser to create a new user and set the password
-  createuser -U postgres $PG_USER
+  createuser --superuser $PG_USER
   psql -U postgres -c "ALTER USER $PG_USER WITH PASSWORD '$PG_PASSWORD';"
 
   pg_ctl -D $PREFIX/var/lib/postgresql stop

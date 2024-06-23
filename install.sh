@@ -31,11 +31,7 @@ install_packages() {
 # Function to consolidate post-installation scripts
 post_install() {
   echo "Running post-install scripts..."
-
-  if is_termux; then
-    /etc/init.d/postgresql start
-  fi
-
+  # Used to have but now its a placeholder
   echo "Post-installation steps completed."
 }
 
