@@ -21,6 +21,8 @@ Mini Rails is a plugin designed to set up a full Rails development environment w
     ./plugins.sh install
     ```
 
+Since it's a hybrid script, you should need to run the plugin install in the Termux environment to get the Android patched Postgres version. And then run it again inside the debian proot-distro to get Ruby, Rails, Node installed!
+
 ## Components
 
 - **install.sh**: Handles the installation of Ruby on Rails and its dependencies.
