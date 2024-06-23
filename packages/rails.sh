@@ -4,7 +4,7 @@
 safe_source "utilities.sh"
 
 prepare_package() {
-  if is_linux && is_debian_bookwork; then
+  if is_linux && is_debian_bookworm; then
     sudo apt install -y libpq-dev
   fi
 }

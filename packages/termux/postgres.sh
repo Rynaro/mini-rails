@@ -29,7 +29,7 @@ configure_package() {
 
   pg_ctl -D $PREFIX/var/lib/postgresql stop
 
-  echo "Mini-Rails #-- Postgresql" >> ~/.potions/.zsh_aliases
+  echo "# Mini-Rails !--> Postgresql" >> ~/.potions/.zsh_aliases
   echo "alias pg_start='pg_ctl -D \$PREFIX/var/lib/postgresql start'" >> ~/.potions/.zsh_aliases
   echo "alias pg_stop='pg_ctl -D \$PREFIX/var/lib/postgresql stop'" >> ~/.potions/.zsh_aliases
 }
